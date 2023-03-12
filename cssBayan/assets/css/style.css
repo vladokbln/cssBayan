@@ -1,0 +1,80 @@
+html {
+	font-size: 20px;
+}
+body {
+	font-family: 'Inter', sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+	width: 100%;
+	max-width: 830px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.list-none {
+	list-style-type: none;
+	padding: 0;
+}
+.accordion-menu * {
+	color: blue;
+}
+.accordion-menu:hover * {
+	color: #000;
+}
+.accordion-menu__item {
+	cursor: pointer;
+	border-top: 1px solid #ccc;
+}
+.accordion-menu__title {
+	margin: 0;
+	padding: 1em;
+	font-weight: bold;
+	transition: .3;
+}
+.accordion-menu__label {
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+.accordion-menu__label .fa {
+	opacity: 0;
+	position: absolute;
+	top: 23px;
+	right: 0;
+	transition: .3;
+}
+.accordion-menu:hover .accordion-menu__label .fa {
+	opacity: 1;
+}
+.accordion-menu__label .fa:before {
+	content: "\f067";
+}
+.accordion-menu__item input:checked + .fa:before,
+.accordion-menu__item:hover .fa:before {
+	content: "\f068";
+}
+.accordion-menu__item input:checked ~ * {
+	color: #000 !important
+}
+.accordion-menu__content {
+	text-align: center;
+	max-height: 0;
+	transform: scale(0);
+	transition: .3s;
+	overflow: hidden;
+}
+.accordion-menu__content img {
+	max-width: 100%;
+}
+.accordion-menu__item input {
+	display: none;
+}
+.accordion-menu__item input:checked ~ .accordion-menu__content,
+.accordion-menu__item:hover .accordion-menu__content {
+	max-height: 600px;
+	transform: scale(1);
+}
